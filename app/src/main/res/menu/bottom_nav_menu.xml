@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Inicio" />
+    <item
+        android:id="@+id/reportListFragment"
+        android:icon="@android:drawable/ic_menu_report_image"
+        android:title="Reportes" />
+    <item
+        android:id="@+id/createReportFragment"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Nuevo" />
+    <item
+        android:id="@+id/remindersFragment"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="Alertas" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Ajustes" />
+</menu>
