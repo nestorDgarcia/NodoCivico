@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nestorgarcia.nodocivico.NodoCivicoApp
 import com.nestorgarcia.nodocivico.repository.CategoryRepository
+import com.nestorgarcia.nodocivico.repository.RemoteRepository
 import com.nestorgarcia.nodocivico.repository.ReminderRepository
 import com.nestorgarcia.nodocivico.repository.ReportRepository
 import com.nestorgarcia.nodocivico.repository.SyncRepository
@@ -36,6 +37,15 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
         SyncRepository(db.syncEventDao(), db.reportDao())
     }
 
+    private val remoteRepository by lazy {
+        RemoteRepository(
+            context,
+            db.reportDao(),
+            db.categoryDao(),
+            db.syncEventDao()
+        )
+    }
+
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
@@ -48,7 +58,7 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
             modelClass.isAssignableFrom(ReminderViewModel::class.java) ->
                 ReminderViewModel(reminderRepository) as T
             modelClass.isAssignableFrom(SyncViewModel::class.java) ->
-                SyncViewModel(syncRepository) as T
+                SyncViewModel(syncRepository, remoteRepository) as T
             else -> throw IllegalArgumentException("ViewModel desconocido: ${modelClass.name}")
         }
     }

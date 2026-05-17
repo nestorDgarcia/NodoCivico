@@ -63,4 +63,17 @@ class UserViewModel(private val userRepository: UserRepository) : ViewModel() {
     fun resetState() {
         _authState.value = AuthState.Idle
     }
+
+    fun update(user: User) {
+        viewModelScope.launch {
+            try {
+                userRepository.update(user)
+            } catch (e: Exception) {
+                _authState.value = AuthState.Error("Error al actualizar perfil")
+            }
+        }
+    }
+
+
 }
+
