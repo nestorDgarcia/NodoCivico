@@ -76,6 +76,8 @@
                     android:layout_height="wrap_content"
                     android:hint="URL del servidor"
                     style="@style/FormInputLayout"
+                    app:boxStrokeColor="@color/text_secondary"
+                    app:boxStrokeWidth="1.5dp"
                     android:layout_marginBottom="12dp">
 
                     <com.google.android.material.textfield.TextInputEditText

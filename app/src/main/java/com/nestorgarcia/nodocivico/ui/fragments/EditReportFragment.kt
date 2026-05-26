@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.nestorgarcia.nodocivico.R
 import com.nestorgarcia.nodocivico.databinding.FragmentEditReportBinding
 import com.nestorgarcia.nodocivico.model.Priority
 import com.nestorgarcia.nodocivico.viewmodel.CategoryViewModel
@@ -74,10 +75,10 @@ class EditReportFragment : Fragment() {
                 val names = categories.map { it.name }
                 val adapter = ArrayAdapter(
                     requireContext(),
-                    android.R.layout.simple_spinner_item,
+                    R.layout.spinner_item,
                     names
                 )
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
                 binding.spinnerCategory.adapter = adapter
 
                 val categoryIndex = categories.indexOfFirst { it.id == report.categoryId }
@@ -104,10 +105,10 @@ class EditReportFragment : Fragment() {
         val priorities = listOf("🟢 Baja", "🟡 Media", "🔴 Alta")
         val adapter = ArrayAdapter(
             requireContext(),
-            android.R.layout.simple_spinner_item,
+            R.layout.spinner_item,
             priorities
         )
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         binding.spinnerPriority.adapter = adapter
     }
 

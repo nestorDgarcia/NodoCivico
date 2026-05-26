@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.nestorgarcia.nodocivico.R
 import com.nestorgarcia.nodocivico.databinding.FragmentLoginBinding
 import com.nestorgarcia.nodocivico.viewmodel.AuthState
@@ -85,8 +86,7 @@ class LoginFragment : Fragment() {
         val etPassword = dialogView.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.etRegPassword)
         val etZone = dialogView.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.etRegZone)
 
-        androidx.appcompat.app.AlertDialog.Builder(requireContext())
-            .setTitle("Crear cuenta")
+        MaterialAlertDialogBuilder(requireContext())
             .setView(dialogView)
             .setPositiveButton("Registrarse") { _, _ ->
                 val username = etUsername.text.toString().trim()

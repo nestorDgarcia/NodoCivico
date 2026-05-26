@@ -24,7 +24,6 @@
     <style name="FormEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textColorHint">@color/text_secondary</item>
-        <item name="android:background">@android:color/transparent</item>
     </style>
 
 </resources>
