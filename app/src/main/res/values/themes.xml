@@ -8,11 +8,16 @@
         <item name="android:windowBackground">@color/background</item>
         <item name="android:statusBarColor">@color/primary</item>
         <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
     </style>
 
     <style name="FormInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextColor">@color/primary</item>
-        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxStrokeColor">@color/stroke_input</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
         <item name="android:textColorHint">@color/text_secondary</item>
     </style>
 

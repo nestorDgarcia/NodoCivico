@@ -18,7 +18,7 @@ class SettingsFragment : Fragment() {
     companion object {
         const val PREFS_NAME = "nodo_civico_prefs"
         const val KEY_API_URL = "api_url"
-        const val DEFAULT_URL = "http://10.0.2.2:5000"
+        const val DEFAULT_URL = "https://nodocivicoapi.onrender.com"
     }
 
     override fun onCreateView(
@@ -56,13 +56,6 @@ class SettingsFragment : Fragment() {
             Toast.makeText(requireContext(), "Ajustes guardados", Toast.LENGTH_SHORT).show()
         }
 
-        binding.btnUseEmulator.setOnClickListener {
-            binding.etApiUrl.setText("http://10.0.2.2:5000")
-        }
-
-        binding.btnUseDevice.setOnClickListener {
-            binding.etApiUrl.setText("http://192.168.1.14:5000")
-        }
     }
 
     private fun updateConnectionStatus() {

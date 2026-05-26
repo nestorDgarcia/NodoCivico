@@ -75,47 +75,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="URL del servidor"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/FormInputLayout"
                     android:layout_marginBottom="12dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etApiUrl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        style="@style/FormEditText"
                         android:inputType="textUri" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="12dp">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnUseEmulator"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Emulador"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        app:strokeColor="@color/primary"
-                        android:textColor="@color/primary"
-                        android:layout_marginEnd="8dp"
-                        android:textSize="12sp" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnUseDevice"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Dispositivo"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                        app:strokeColor="@color/primary"
-                        android:textColor="@color/primary"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSaveSettings"
